@@ -12,6 +12,10 @@ const PORT = process.env.PORT // Asignar el valor de la variable de entorno PORT
 app.use(express.json()) // Las solicitudes que lleguen al servidor se van a convertir a JSON
 app.use(cors()) // Habilitar el uso de cors
 
+app.get('/', (req, res) => { // Crear una ruta para la raiz del servidor
+  res.send('Hola mundo') // Responder con el mensaje 'Hola mundo'
+})
+
 
 
 const server = () => {
