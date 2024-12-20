@@ -2,6 +2,8 @@
 const express = require('express') // Importar el paquete express
 const cors = require('cors'); // Importar el paquete cors
 
+const {readdirSync} = require('fs') // Importar el metodo readdirSync del paquete fs
+
 const app = express() // Crear una instancia de express, desde ahi se van a llamar los metodos
 
 require('dotenv').config() // Usar paquete dotenv para cargar las variables de entorno
@@ -19,6 +21,10 @@ app.get('/', (req, res) => { // Crear una ruta para la raiz del servidor
 })
 */
 
+// ** Rutas **
+readdirSync('./routes').map( // Leer todos los archivos de la carpeta routes y mapearlos
+  (route) => app.use('/api/v1', require('./routes/' + route)) // Usar las rutas de la carpeta routes
+)
 
 
 const server = () => {
