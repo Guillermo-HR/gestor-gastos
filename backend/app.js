@@ -12,17 +12,20 @@ const PORT = process.env.PORT // Asignar el valor de la variable de entorno PORT
 app.use(express.json()) // Las solicitudes que lleguen al servidor se van a convertir a JSON
 app.use(cors()) // Habilitar el uso de cors
 
+/*
+//* Asi se hace un metodo get, ahorita no se necesita
 app.get('/', (req, res) => { // Crear una ruta para la raiz del servidor
   res.send('Hola mundo') // Responder con el mensaje 'Hola mundo'
 })
+*/
 
 
 
 const server = () => {
   /*
-  // Primera prueba para verificar que el servidor este corriendo
+  //* Primera prueba para verificar que el servidor este corriendo
   console.log('Server running on port', PORT) ;
-  // Mostrar en consola el mensaje 'Server running on port' seguido del valor de la constante PORT
+  //* Mostrar en consola el mensaje 'Server running on port' seguido del valor de la constante PORT
   */
   app.listen(PORT, () => { // Crear un servidor que escuche en el puerto PORT
     console.log('Se escucha en el puerto: ', PORT)
