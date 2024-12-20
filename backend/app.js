@@ -1,6 +1,7 @@
 // ** Llamar a los paquetes necesarios **
 const express = require('express') // Importar el paquete express
 const cors = require('cors'); // Importar el paquete cors
+const {db} = require('./db/db') // Importar la funcion db del archivo db.js
 
 const app = express() // Crear una instancia de express, desde ahi se van a llamar los metodos
 
@@ -24,6 +25,7 @@ const server = () => {
   console.log('Server running on port', PORT) ;
   // Mostrar en consola el mensaje 'Server running on port' seguido del valor de la constante PORT
   */
+  db()
   app.listen(PORT, () => { // Crear un servidor que escuche en el puerto PORT
     console.log('Se escucha en el puerto: ', PORT)
   })
